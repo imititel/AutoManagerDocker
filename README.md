@@ -39,8 +39,6 @@ CREATE TABLE vehicles (
     owner VARCHAR(255)
 );
 
-
-
 Construirea și rularea proiectului Docker
 Construiește imaginea Docker:
 În directorul rădăcină al proiectului (unde se află Dockerfile), rulează următoarea comandă pentru a construi:
@@ -64,5 +62,5 @@ DELETE (Delete a Vehicle)
 curl -X DELETE http://localhost:8080/vehicles/delete/1HGBH41JXMN109186 | jq
 
 GET (Get Vehicle by VIN)
-curl http://localhost:8080/vehicles/1HGBH41JXMN109186 | jq
+ curl http://localhost:8080/vehicles/3HGBH41JXMN109188 | jq
 

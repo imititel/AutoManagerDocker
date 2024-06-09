@@ -3,6 +3,7 @@ package com.sos.proiect.controller;
 import com.sos.proiect.model.Vehicle;
 import com.sos.proiect.service.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,14 +25,20 @@ public class VehicleController {
         return vehicleService.getAllVehicles();
     }
 
+    @GetMapping("/{vin}")
+    public Vehicle getVehicleByVin(@PathVariable String vin) {
+        return vehicleService.getVehicleByVin(vin);
+    }
+
     @PutMapping("/update/{vin}")
-    public Vehicle updateVehicle(@PathVariable String vin, @RequestBody Vehicle vehicle) {
-        return vehicleService.updateVehicle(vin, vehicle);
+    public Vehicle updateVehicle(@PathVariable String vin, @RequestBody Vehicle updatedVehicle) {
+        return vehicleService.updateVehicle(vin, updatedVehicle);
     }
 
     @DeleteMapping("/delete/{vin}")
-    public void deleteVehicle(@PathVariable String vin) {
+    public ResponseEntity<Void> deleteVehicle(@PathVariable String vin) {
         vehicleService.deleteVehicle(vin);
+        return ResponseEntity.ok().build();
     }
 }
 
