@@ -13,8 +13,7 @@ public class Vehicle {
     private int year;
     private String owner;
 
-    // Getters and setters...
-
+    // Getters and Setters
     public String getVin() {
         return vin;
     }

@@ -29,7 +29,7 @@ curl -X PUT -H "Content-Type: application/json" -d '{"make":"Honda","model":"Civ
 DELETE (Delete a Vehicle)
 curl -X DELETE http://localhost:8080/vehicles/delete/1HGBH41JXMN109186 | jq
 GET (Get Vehicle by VIN)
-curl http://localhost:8080/vehicles/1HGBH41JXMN109186 | jq
+curl http://localhost:8080/vehicles/3HGBH41JXMN109188 | jq
 
 Pentru a verifica dacă aplicația se conectează corect la baza de date MySQL, asigură-te că:
 
