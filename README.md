@@ -13,8 +13,19 @@ Poți rula MySQL într-un container Docker folosind următoarea comandă:
 docker stop mysql-db
 docker rm mysql-db
 
-Crearea unui Nou Container MySQL:
+Verifică rețeaua Docker
+Verifică ce rețele sunt disponibile și vezi dacă ambele containere sunt pe aceeași rețea.
 
+docker network ls
+Ar trebui să vezi o listă de rețele. Verifică dacă ambele containere sunt pe aceeași rețea, de exemplu bridge.
+
+Adaugă containerele în aceeași rețea
+Poți crea o rețea personalizată și să rulezi ambele containere în acea rețea.
+
+Creează o rețea Docker personalizată:
+docker network create my_network
+
+Crearea unui Nou Container MySQL:
 docker run --network my_network --name mysql-db -e MYSQL_ROOT_PASSWORD=your_password -e MYSQL_DATABASE=proiect_sos -p 3306:3306 -it mysql:latest
 Conectează-te la containerul MySQL folosind comanda următoare:
 
